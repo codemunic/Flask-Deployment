@@ -1,31 +1,14 @@
-# PyTorch-Elmo-BiLSTMCRF
+# Named Entity Recognition Deployment using Flask
 
-PyTorch Implementation of the BiLSTM-CRF model as described in https://guillaumegenthial.github.io/.
+This folder deploys the NER model using the Flask.
 
-This model builds upon that by adding including ELMO embeddings as a feature representation option.
-(For more detail about ELMo, please see the publication ["Deep contextualized word representations"](http://arxiv.org/abs/1802.05365))
+Run:
 
-For the Keras implementation (without ELMO) please refer to this [link](https://github.com/yongyuwen/sequence-tagging-ner).
+> pip install requirements.txt
+> python app.py
 
-## Usage
-1.	**Requirements**:  
-    a.	Packages: Anaconda, Pytorch, AllenNLP (if on linux and using elmo)  
-    b.	Data: Train, valid and test datasets in CoNLL 2003 NER format.  
-    c.	Glove 300B embeddings (If not using Elmo)
+After getting the running host address, change the host address in webpage to access model from the webpage.
 
-2.	**Configure Settings**:  
-    a.	Change settings in model/config.py  
-    b.	Main settings to change: File directories, model hyperparameters etc.  
+See model at: 
 
-3.	**Build Data**:  
-    a.	Run build_data.py  
-        i.	Builds embedding dictionary, text file of words, chars tags, as well as idx to word and idx to char mapping for the model to read  
 
-4.	**Train Model**:  
-    a.	Run train.py  
-
-5.	**Test Model**:  
-    a.	Run test.py  
-    b.	Evaluates on test set. Also accepts other arguments to predict on custom string
-
-Source: https://github.com/yongyuwen/PyTorch-Elmo-BiLSTMCRF/
